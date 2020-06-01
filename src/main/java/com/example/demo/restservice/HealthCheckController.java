@@ -28,10 +28,10 @@ public class HealthCheckController {
        logger.info("request received in IOT backend for user id"+id);
         
        switch(id){
-           case 1:
+           case "1":
                return "Ashish";
                
-           case 2:
+           case "2":
                return "Prince";
                
        }
