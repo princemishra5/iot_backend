@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -19,5 +20,22 @@ public class HealthCheckController {
         logger.info("/ping request received");
 
         return "PONG";
+    }
+    
+    @RequestMapping(path="/{id}")
+    public String getMessage(@PathVariable("name") String id) {
+        
+       logger.info("request received in IOT backend for user id"+id);
+        
+       switch(id){
+           case 1:
+               return "Ashish";
+               
+           case 2:
+               return "Prince";
+               
+       }
+        
+        return "invalid user id";
     }
 }
