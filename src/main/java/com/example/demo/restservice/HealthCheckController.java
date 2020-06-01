@@ -23,7 +23,7 @@ public class HealthCheckController {
         return "PONG";
     }
     
-    @RequestMapping(path="/{id}")
+    @RequestMapping(path="/fetchUser/{id}")
     public String getMessage(@PathVariable("id") String id) {
         
        logger.info("request received in IOT backend for user id"+id);
